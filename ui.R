@@ -84,10 +84,10 @@ shinyUI(fluidPage(
 			tags$h4('PSO Configuration'),
 			column(3, 
 				tags$h5('Swarm Size'),
-				conditionalPanel("(input.inhibition == '1' & (input.kmu != input.kml || input.kcu != input.kcl)) |
-													(input.inhibition == '2' & (input.kmu != input.kml || input.kcu != input.kcl)) |
-													(input.inhibition == '3' & (input.kmu != input.kml || input.kuu != input.kul)) |
-													(input.inhibition == '4' & (input.kmu != input.kml || input.kcu != input.kcl || input.kuu != input.kul))",
+				conditionalPanel("(input.inhibition == '1' & (input.kmu != input.kml | input.kcu != input.kcl)) |
+													(input.inhibition == '2' & (input.kmu != input.kml | input.kcu != input.kcl)) |
+													(input.inhibition == '3' & (input.kmu != input.kml | input.kuu != input.kul)) |
+													(input.inhibition == '4' & (input.kmu != input.kml | input.kcu != input.kcl || input.kuu != input.kul))",
 					numericInput("L1ns", "Outer Loop",  64, min = 4, max = 256, step = 1, width = "100px"),
 					numericInput("L2ns", "Inner Loop",  32, min = 4, max = 256, step = 1, width = "100px"),
 					numericInput("L4ns", "Mu Loop",    128, min = 4, max = 256, step = 1, width = "100px")
@@ -101,10 +101,10 @@ shinyUI(fluidPage(
 			),
 			column(3, 
 				tags$h5('Max. Iteration'),
-				conditionalPanel("(input.inhibition == '1' & (input.kmu != input.kml || input.kcu != input.kcl)) |
-													(input.inhibition == '2' & (input.kmu != input.kml || input.kcu != input.kcl)) |
-													(input.inhibition == '3' & (input.kmu != input.kml || input.kuu != input.kul)) |
-													(input.inhibition == '4' & (input.kmu != input.kml || input.kcu != input.kcl || input.kuu != input.kul))",
+				conditionalPanel("(input.inhibition == '1' & (input.kmu != input.kml | input.kcu != input.kcl)) |
+													(input.inhibition == '2' & (input.kmu != input.kml | input.kcu != input.kcl)) |
+													(input.inhibition == '3' & (input.kmu != input.kml | input.kuu != input.kul)) |
+													(input.inhibition == '4' & (input.kmu != input.kml | input.kcu != input.kcl || input.kuu != input.kul))",
 					numericInput("L1nt", "Outer Loop", 100, min = 10, max = 500, step = 5, width = "100px"),
 					numericInput("L2nt", "Inner Loop",  50, min = 10, max = 500, step = 5, width = "100px"),
 					numericInput("L4nt", "Mu Loop",    100, min = 10, max = 500, step = 5, width = "100px")

@@ -20,46 +20,46 @@ shinyUI(fluidPage(
 			column(4,
 				conditionalPanel("input.inhibition == '1'",
 					column(4,
-						numericInput("kmu", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
-						numericInput("kml", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
+						numericInput("kmu1", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
+						numericInput("kml1", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
 					),
 					column(4,
-						numericInput("kcu", "Kic Upper", 3, min = 1e-2, max = NA, width = "100px"),	
-						numericInput("kcl", "Kic Lower", 2, min = 1e-2, max = NA, width = "100px")
+						numericInput("kcu1", "Kic Upper", 3, min = 1e-2, max = NA, width = "100px"),	
+						numericInput("kcl1", "Kic Lower", 2, min = 1e-2, max = NA, width = "100px")
 					)
 				),
 				conditionalPanel("input.inhibition == '2'",
 					column(4,
-						numericInput("kmu", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
-						numericInput("kml", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
+						numericInput("kmu2", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
+						numericInput("kml2", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
 					),
 					column(4,
-						numericInput("kcu", "Kic Upper", 3, min = 1e-2, max = NA, width = "100px"),	
-						numericInput("kcl", "Kic Lower", 2, min = 1e-2, max = NA, width = "100px")
+						numericInput("kcu2", "Kic Upper", 3, min = 1e-2, max = NA, width = "100px"),	
+						numericInput("kcl2", "Kic Lower", 2, min = 1e-2, max = NA, width = "100px")
 					)
 				),
 				conditionalPanel("input.inhibition == '3'",
 					column(4,
-						numericInput("kmu", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
-						numericInput("kml", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
+						numericInput("kmu3", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
+						numericInput("kml3", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
 					),
 					column(4,
-						numericInput("kuu", "Kiu Upper", 5, min = 1e-2, max = NA, width = "100px"),
-						numericInput("kul", "Kiu Lower", 4, min = 1e-2, max = NA, width = "100px")
+						numericInput("kuu3", "Kiu Upper", 5, min = 1e-2, max = NA, width = "100px"),
+						numericInput("kul3", "Kiu Lower", 4, min = 1e-2, max = NA, width = "100px")
 					)
 				),	
 				conditionalPanel("input.inhibition == '4'",
 					column(4,
-						numericInput("kmu", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
-						numericInput("kml", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
+						numericInput("kmu4", "Km Upper",  5, min = 1e-2, max = NA, width = "100px"),
+						numericInput("kml4", "Km Lower",  4, min = 1e-2, max = NA, width = "100px")
 					),
 					column(4,
-						numericInput("kcu", "Kic Upper", 3, min = 1e-2, max = NA, width = "100px"),	
-						numericInput("kcl", "Kic Lower", 2, min = 1e-2, max = NA, width = "100px")
+						numericInput("kcu4", "Kic Upper", 3, min = 1e-2, max = NA, width = "100px"),	
+						numericInput("kcl4", "Kic Lower", 2, min = 1e-2, max = NA, width = "100px")
 					),				
 					column(4,
-						numericInput("kuu", "Kiu Upper", 5, min = 1e-2, max = NA, width = "100px"),
-						numericInput("kul", "Kiu Lower", 4, min = 1e-2, max = NA, width = "100px")
+						numericInput("kuu4", "Kiu Upper", 5, min = 1e-2, max = NA, width = "100px"),
+						numericInput("kul4", "Kiu Lower", 4, min = 1e-2, max = NA, width = "100px")
 					)
 				)
 			),
@@ -84,35 +84,35 @@ shinyUI(fluidPage(
 			tags$h4('PSO Configuration'),
 			column(3, 
 				tags$h5('Swarm Size'),
-				conditionalPanel("(input.inhibition == '1' & (input.kmu != input.kml | input.kcu != input.kcl)) |
-													(input.inhibition == '2' & (input.kmu != input.kml | input.kcu != input.kcl)) |
-													(input.inhibition == '3' & (input.kmu != input.kml | input.kuu != input.kul)) |
-													(input.inhibition == '4' & (input.kmu != input.kml | input.kcu != input.kcl || input.kuu != input.kul))",
+				conditionalPanel("(input.inhibition == '1' & (input.kmu1 != input.kml1 | input.kcu1 != input.kcl1)) |
+													(input.inhibition == '2' & (input.kmu2 != input.kml2 | input.kcu2 != input.kcl2)) |
+													(input.inhibition == '3' & (input.kmu3 != input.kml3 | input.kuu3 != input.kul3)) |
+													(input.inhibition == '4' & (input.kmu4 != input.kml4 | input.kcu4 != input.kcl4 | input.kuu4 != input.kul4))",
 					numericInput("L1ns", "Outer Loop",  64, min = 4, max = 256, step = 1, width = "100px"),
 					numericInput("L2ns", "Inner Loop",  32, min = 4, max = 256, step = 1, width = "100px"),
 					numericInput("L4ns", "Mu Loop",    128, min = 4, max = 256, step = 1, width = "100px")
 				),
-				conditionalPanel("(input.inhibition == '1' & input.kmu == input.kml & input.kcu == input.kcl) |
-													(input.inhibition == '2' & input.kmu == input.kml & input.kcu == input.kcl) |
-													(input.inhibition == '3' & input.kmu == input.kml & input.kuu == input.kul) |
-													(input.inhibition == '4' & input.kmu == input.kml & input.kcu == input.kcl & input.kuu == input.kul)",
+				conditionalPanel("(input.inhibition == '1' & input.kmu1 == input.kml1 & input.kcu1 == input.kcl1) |
+													(input.inhibition == '2' & input.kmu2 == input.kml2 & input.kcu2 == input.kcl2) |
+													(input.inhibition == '3' & input.kmu3 == input.kml3 & input.kuu3 == input.kul3) |
+													(input.inhibition == '4' & input.kmu4 == input.kml4 & input.kcu4 == input.kcl4 & input.kuu4 == input.kul4)",
 					numericInput("L3ns", "Local Loop",  64, min = 4, max = 256, step = 1, width = "100px")
 				)
 			),
 			column(3, 
 				tags$h5('Max. Iteration'),
-				conditionalPanel("(input.inhibition == '1' & (input.kmu != input.kml | input.kcu != input.kcl)) |
-													(input.inhibition == '2' & (input.kmu != input.kml | input.kcu != input.kcl)) |
-													(input.inhibition == '3' & (input.kmu != input.kml | input.kuu != input.kul)) |
-													(input.inhibition == '4' & (input.kmu != input.kml | input.kcu != input.kcl || input.kuu != input.kul))",
+				conditionalPanel("(input.inhibition == '1' & (input.kmu1 != input.kml1 | input.kcu1 != input.kcl1)) |
+													(input.inhibition == '2' & (input.kmu2 != input.kml2 | input.kcu2 != input.kcl2)) |
+				                  (input.inhibition == '3' & (input.kmu3 != input.kml3 | input.kuu3 != input.kul3)) |
+				                  (input.inhibition == '4' & (input.kmu4 != input.kml4 | input.kcu4 != input.kcl4 | input.kuu4 != input.kul4))",
 					numericInput("L1nt", "Outer Loop", 100, min = 10, max = 500, step = 5, width = "100px"),
 					numericInput("L2nt", "Inner Loop",  50, min = 10, max = 500, step = 5, width = "100px"),
 					numericInput("L4nt", "Mu Loop",    100, min = 10, max = 500, step = 5, width = "100px")
 				),
-				conditionalPanel("(input.inhibition == '1' & input.kmu == input.kml & input.kcu == input.kcl) |
-													(input.inhibition == '2' & input.kmu == input.kml & input.kcu == input.kcl) |
-													(input.inhibition == '3' & input.kmu == input.kml & input.kuu == input.kul) |
-													(input.inhibition == '4' & input.kmu == input.kml & input.kcu == input.kcl & input.kuu == input.kul)",
+				conditionalPanel("(input.inhibition == '1' & input.kmu1 == input.kml1 & input.kcu1 == input.kcl1) |
+													(input.inhibition == '2' & input.kmu2 == input.kml2 & input.kcu2 == input.kcl2) |
+													(input.inhibition == '3' & input.kmu3 == input.kml3 & input.kuu3 == input.kul3) |
+													(input.inhibition == '4' & input.kmu4 == input.kml4 & input.kcu4 == input.kcl4 & input.kuu4 == input.kul4)",
 					numericInput("L3nt", "Local Loop", 100, min = 10, max = 500, step = 5, width = "100px")
 				)				
 			),

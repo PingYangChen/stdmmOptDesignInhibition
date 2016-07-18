@@ -20,17 +20,17 @@ shinyServer(function(input, output, session) {
 		dDesign <- nSupp*3 - 1
 		pUB <- {switch(input$inhibition,
 												"0" = {0},
-												"1" = {c(input$v, input$kmu, input$kcu)},
-												"2" = {c(input$v, input$kmu, input$kcu)},
-												"3" = {c(input$v, input$kmu, input$kuu)},
-												"4" = {c(input$v, input$kmu, input$kcu, input$kuu)}
+												"1" = {c(input$v, input$kmu1, input$kcu1)},
+												"2" = {c(input$v, input$kmu2, input$kcu2)},
+												"3" = {c(input$v, input$kmu3, input$kuu3)},
+												"4" = {c(input$v, input$kmu4, input$kcu4, input$kuu4)}
 											)}
 		pLB <- {switch(input$inhibition,
 												"0" = {0},
-												"1" = {c(input$v, input$kml, input$kcl)},
-												"2" = {c(input$v, input$kml, input$kcl)},
-												"3" = {c(input$v, input$kml, input$kul)},
-												"4" = {c(input$v, input$kml, input$kcl, input$kul)}
+												"1" = {c(input$v, input$kml1, input$kcl1)},
+												"2" = {c(input$v, input$kml2, input$kcl2)},
+												"3" = {c(input$v, input$kml3, input$kul3)},
+												"4" = {c(input$v, input$kml4, input$kcl4, input$kul4)}
 											)}
 		dUB <- c(input$su, input$iu)
 		dLB <- c(input$sl, input$il)

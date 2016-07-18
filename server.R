@@ -43,6 +43,7 @@ shinyServer(function(input, output, session) {
 			c(4, 0, 1, 			 1, input$L4ns, input$L4nt, 1e-6, input$c1, input$c2, input$vk, input$w0, input$w1, input$wv, 1, 0)  # ASSIST
 		)
 		appOutput$pout <- NULL; appOutput$aout <- NULL; appOutput$dout <- NULL; appOutput$cputime <- NULL
+		appMsg$errMsg <- NULL
 	})
 	
 	# Check Input value

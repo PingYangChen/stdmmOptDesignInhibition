@@ -146,36 +146,36 @@ shinyUI(fluidPage(
 				      tags$li("Choose the interested inhibition model in ", tags$strong("'Select One'"),"."),
 				      tags$li("Specify the model parameters.
 				              The users can change the value of the first parameter,", tags$i("a"), ", 
-                      to verify that it is linear to the ", tags$i("D"), "-criterion.
+                      to verify that it is linear to the ", tags$i("D-"), "criterion.
 				              For the lower and upper bounds for the remaining parameters, 
 				              please find the illustation below."),
 				      tags$ul(
 				        tags$li("When some values in ", tags$strong("'Lower'"), "is smaller than that in ", tags$strong("'Upper'"),
-                        ", the app will search the standardized maximin ", tags$i("D"), "-optimal design 
+                        ", the app will search the standardized maximin ", tags$i("D-"), "optimal design 
 				                 among the specified parameter space."),
-				        tags$li("When all values in 'Lower' equal to that in 'Upper', 
-				                 the app will search the locally ", tags$i("D"), "-optimal design at the 
-				                 specified parameter point.")
+				        tags$li("When all values in ", tags$strong("'Lower'"), "equal to that in ", tags$strong("'Upper'"), 
+				                ", the app will search the locally ", tags$i("D-"), "optimal design at the 
+				                specified parameter point.")
 				      ),
-				      tags$li("Specify the design space for each component, s and i."),
+				      tags$li("Specify the design space for each component, ", tags$i("s"), "and ", tags$i("i"),"."),
 				      tags$li("Set the PSO options:"),
 				      tags$ul(
-				        tags$li("For searching the standardized maximin ", tags$i("D"), "-optimal design, 
+				        tags$li("For searching the standardized maximin ", tags$i("D-"), "optimal design, 
                          there are two PSO procedures.  
 				                 First, specify the wanted swarm size and maximal iteration number for the 
-				                 'Outer' and 'Inner' loops of design search procedure, the NestedPSO.  
-				                 Then, one also need to specify these two settings for the 'Mu Loop', 
-				                 which is another PSO procedure for obtaining the assistant design
-                         used in the equivalence theorem checking.
-				                 <b>Note that, the NestedPSO takes about 40 seconds if the user runs 
+				                 ", tags$strong("'Outer'"), "and ", tags$strong("'Inner'"), "loops of design search procedure, the NestedPSO.  
+				                 Then, one also need to specify these two settings for the ", tags$strong("'Mu Loop'"), 
+				                 ", which is another PSO procedure for obtaining the assistant design
+                         used in the equivalence theorem checking.", 
+                         tags$b("Note that, the NestedPSO takes about 40 seconds if the user runs 
                          it with default settings, and, it should be enough to find the optimal 
-				                 design.</b>"),
+				                 design.")),
 				        tags$li("For searching the locally ", tags$i("D"), "-optimal design, the swarm size and maximal iteration number
-				                  for the PSO (<strong>'Local Loop'</strong>) precedure is needed."),
+				                  for the PSO (", tags$strong("'Local Loop'"), ") precedure is needed."),
 				        tags$li("Some miscellaneous options are available for altering, such as the cognitive and the social parameters, 
 				                 the velocity clamping constant and the descending mode of inertia weight")
 				      ),
-				      tags$li("As the settings are done, press <strong>'Execute'</strong> to start the PSO search.") 
+				      tags$li("As the settings are done, press ", tags$strong("'Execute'"), "to start the PSO search.") 
 				    )
 				  )
 				),

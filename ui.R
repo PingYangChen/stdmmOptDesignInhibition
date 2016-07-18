@@ -143,7 +143,7 @@ shinyUI(fluidPage(
 				    tags$p("To use this app, please see the following instructions."),
 				    tags$ol(
 				      tags$li("This app will take a few seconds to initiate."),
-				      tags$li("Choose the interested inhibition model in 'Select One'."),
+				      tags$li("Choose the interested inhibition model in ", tags$strong("'Select One'"),"."),
 				      tags$li("Specify the model parameters.
 				              The users can change the value of the first parameter, a, 
                       to verify that it is linear to the D-criterion.

@@ -4,8 +4,6 @@ library(inline)
 library(RcppArmadillo)
 
 sourceCpp(file.path(getwd(), "kernel/psokernel.cpp"))
-#sourceCpp("/srv/shiny-server/stdmxmnd_inhibition/kernel/psokernel.cpp")
-#sourceCpp("D:\\Ping_Yang\\Google Drive\\PYChen_Statistics_NCKU\\Topics on Coding\\Shiny\\stdmxmnd_inhibition\\kernel\\psokernel.cpp")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {

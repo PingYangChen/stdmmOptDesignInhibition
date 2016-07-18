@@ -32,7 +32,7 @@ List NESTEDPSO(const int LOOPINFO, NumericMatrix OPTIONMAT_INPUT, NumericVector 
 {
 	arma_rng::set_seed_random();
 	int NCPU = omp_get_max_threads();
-	omp_set_num_threads(NCPU - 1);
+	if (NCPU > 1) { omp_set_num_threads(NCPU - 1); } else { omp_set_num_threads(NCPU) ;}
 	
 	arma::mat OPTIONMAT(OPTIONMAT_INPUT.begin(), OPTIONMAT_INPUT.nrow(), OPTIONMAT_INPUT.ncol(), false);
   arma::vec DESIGNINFO(DESIGNINFO_INPUT.begin(), DESIGNINFO_INPUT.size(), false);

@@ -3,7 +3,7 @@ library(Rcpp)
 library(inline)
 library(RcppArmadillo)
 
-sourceCpp("https://github.com/PingYangChen/StdMxMnDesign_Inhibition/blob/master/kernel/psokernel.cpp")
+sourceCpp(file.path(getwd(), "kernel/psokernel.cpp"))
 #sourceCpp("/srv/shiny-server/stdmxmnd_inhibition/kernel/psokernel.cpp")
 #sourceCpp("D:\\Ping_Yang\\Google Drive\\PYChen_Statistics_NCKU\\Topics on Coding\\Shiny\\stdmxmnd_inhibition\\kernel\\psokernel.cpp")
 

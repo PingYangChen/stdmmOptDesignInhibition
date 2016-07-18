@@ -140,8 +140,8 @@ shinyUI(fluidPage(
      tabsetPanel(
 				tabPanel("Instruction",
 				  tags$div(
-				    tages$p("To use this app, please see the following instructions."),
-				    tages$ol(
+				    tags$p("To use this app, please see the following instructions."),
+				    tags$ol(
 				      tags$li("This app will take a few seconds to initiate."),
 				      tags$li("Choose the interested inhibition model in 'Select One'."),
 				      tags$li("Specify the model parameters.
@@ -150,17 +150,17 @@ shinyUI(fluidPage(
 				              For the lower and upper bounds for the remaining parameters, 
 				              please find the illustation below."),
 				      tags$ul(
-				        tages$li("When some values in 'Lower' is smaller than that in 'Upper', 
+				        tags$li("When some values in 'Lower' is smaller than that in 'Upper', 
 				                 the app will search the standardized maximin D-optimal design 
 				                 among the specified parameter space."),
-				        tages$li("When all values in 'Lower' equal to that in 'Upper', 
+				        tags$li("When all values in 'Lower' equal to that in 'Upper', 
 				                 the app will search the locally D-optimal design at the 
 				                 specified parameter point.")
 				      ),
 				      tags$li("Specify the design space for each component, s and i."),
 				      tags$li("Set the PSO options:"),
 				      tags$ul(
-				        tages$li("For searching the standardized maximin D-optimal design, 
+				        tags$li("For searching the standardized maximin D-optimal design, 
                          there are two PSO procedures.  
 				                 First, specify the wanted swarm size and maximal iteration number for the 
 				                 'Outer' and 'Inner' loops of design search procedure, the NestedPSO.  
@@ -170,12 +170,12 @@ shinyUI(fluidPage(
 				                 <b>Note that, the NestedPSO takes about 40 seconds if the user runs 
                          it with default settings, and, it should be enough to find the optimal 
 				                 design.</b>"),
-				        tages$li("For searching the locally <i>D</i>-optimal design, the swarm size and maximal iteration number
+				        tags$li("For searching the locally <i>D</i>-optimal design, the swarm size and maximal iteration number
 				                  for the PSO (<strong>'Local Loop'</strong>) precedure is needed."),
-				        tages$li("Some miscellaneous options are available for altering, such as the cognitive and the social parameters, 
+				        tags$li("Some miscellaneous options are available for altering, such as the cognitive and the social parameters, 
 				                 the velocity clamping constant and the descending mode of inertia weight")
 				      ),
-				      tages$li("As the settings are done, press <strong>'Execute'</strong> to start the PSO search.") 
+				      tags$li("As the settings are done, press <strong>'Execute'</strong> to start the PSO search.") 
 				    )
 				  )
 				),

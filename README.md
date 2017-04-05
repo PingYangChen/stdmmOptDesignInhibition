@@ -10,7 +10,7 @@ install.packages(c("shiny", "Rcpp", "RcppArmadillo"))
 To use this app, please open your R software and send the following commands.
 ```R
 library(shiny)
-runGitHub("StdMxMnDesign_Inhibition", "PingYangChen")
+runGitHub("stdmmOptDesignInhibition", "PingYangChen")
 ```
 To use this app, please follow the instruction below.
 

@@ -32,7 +32,7 @@ List NESTEDPSO(const int LOOPINFO, NumericMatrix OPTIONMAT_INPUT, NumericVector 
 {
 	arma_rng::set_seed_random();
 	int NCPU = omp_get_max_threads();
-	if (NCPU > 1) { omp_set_num_threads(NCPU - 1); } else { omp_set_num_threads(NCPU) ;}
+	omp_set_num_threads(NCPU - 1);
 	
 	arma::mat OPTIONMAT(OPTIONMAT_INPUT.begin(), OPTIONMAT_INPUT.nrow(), OPTIONMAT_INPUT.ncol(), false);
   arma::vec DESIGNINFO(DESIGNINFO_INPUT.begin(), DESIGNINFO_INPUT.size(), false);
@@ -105,7 +105,7 @@ List QUICKDISPERSION(double fGBest, NumericVector DESIGN_INPUT, NumericVector AS
   arma::vec DESIGNINFO(DESIGNINFO_INPUT.begin(), DESIGNINFO_INPUT.size(), false);	
 
 	/* REVISE HERE */
-	int nGrid = 100;
+	int nGrid = 120;
 	int dSupp = (int)DESIGNINFO(1);
 	arma::vec ub = conv_to<vec>::from(DESIGNINFO.subvec(4, 3 + dSupp));
 	arma::vec lb = conv_to<vec>::from(DESIGNINFO.subvec(4 + dSupp, 3 + 2*dSupp));	
@@ -506,7 +506,7 @@ void ASSISTANT_SEARCH_CORNER(int &nAst, rowvec &ASSIST, vec &BestF, const rowvec
 				fEval(MIN_EFF, paraTmp1, OPTIONMAT, DESIGNINFO, DESIGN, F_LOOPINDEX);  
 				arma::mat paraTmp2 = repmat(s.row(iAstPt), sdPara, 1) + (repmat(d.row(iAstPt), sdPara, 1) % eyeMat.rows(pSearch));
 				fEval(COMP_EFF, paraTmp2, OPTIONMAT, DESIGNINFO, DESIGN, F_LOOPINDEX);	
-				if (all(COMP_EFF >= MIN_EFF(0))) { fmins(iAstPt) = 1; }
+				//if (all(COMP_EFF >= MIN_EFF(0))) { fmins(iAstPt) = 1; }
 				if (std::abs(fBest - MIN_EFF(0)) < 1e-5) { fmins(iAstPt) = 1; }
 				fvals(iAstPt) = (double)MIN_EFF(0);
 			}

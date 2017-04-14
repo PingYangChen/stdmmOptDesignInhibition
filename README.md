@@ -2,10 +2,9 @@
 
 This repository consists of the source codes of the online app, [Application of Particle Swarm Techniques in Finding Locally D-optimal and Standardized Maximin D-optimal Designs for Enzyme Inhibition Models](https://pingyangchen.shinyapps.io/stdmmoptdesigninhibition/).
 
-We provide the source codes here for users who have basic knowledge in R programming.  There are two required R packages for running our code, *Rcpp* and *RcppArmadillo*, because the main function of NestedPSO is written in C++.  Nonetheless, users are not required to be familiar with C/C++ programming.  
+We provide the source codes here for users who have basic knowledge in R programming.  There are two required R packages for running our code, *Rcpp* and *RcppArmadillo*, because the main function of NestedPSO is written in C++.  Nonetheless, users are NOT required to be familiar with C/C++ programming.  
 
-In our online app, we did not provide configurable number of support points for standardized maximin *D*-optimal design.  This is because, once the target design is not minimally supported, due to the lack of analytical solution of locally *D*-optimal design, the NestedPSO becomes a 3-layer optimization algorithm and the computational time would be exponentially increased (hours to days, depending on the settings of swarm sizes and iterations of PSO loops). 
-Therefore, we suggest users to run the code in their own device if desired to change the number of support points.
+In our online app, we search minimally supported standardized maximin *D*-optimal design only to avoid the huge computational time (hours to days, depending on the settings of swarm sizes and iterations of PSO loops) of one implementation that exhausts the computational resource on the server.  Therefore, we suggest users to run the code in their own device if desired to change the number of support points.
 
 The following R codes (*run.R*) are an example for how to use the source codes.  For more details of background knowledge, please refer to the main page of our online app or our published paper.
 

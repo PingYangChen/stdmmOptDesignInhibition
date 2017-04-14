@@ -1,9 +1,11 @@
-# Standardized Maximin *D*-optimal Designs for Enzyme Inhibition Models
+# NestedPSO Algorithm for Finding Standardized Maximin *D*-optimal Designs for Enzyme Inhibition Models
 
-We demonstrate how to use PSO to find standardized maximin *D*-optimal design for 4 types fo enzyme inhibition models.  
-This app runs on RShiny, please check if the users had shiny package installed.  If not, please install shiny package in R.  
-Also, the nestedPSO algorithm is written by C++ including armadillo linear algebra library.  
-Thus, the Rcpp related packages are needed.
+This repository consists of the source codes of the online app, [Application of Particle Swarm Techniques in Finding Locally D-optimal and Standardized Maximin D-optimal Designs for Enzyme Inhibition Models](https://pingyangchen.shinyapps.io/stdmmoptdesigninhibition/).
+
+We provide the source codes here for users who have basic knowledge in R programming.  There are two required R packages for running our code, *Rcpp* and *RcppArmadillo*, because the main function of NestedPSO is written in C++.  Nonetheless, users are not required to be familiar with C/C++ programming.  
+
+By using the source codes, one can generate a design with more than minimally supported number of support points freely.  Once the standardized maximin design is not minimally supported, due to the lack of analytical solution of locally *D*-optimal design, the NestedPSO becomes a 3-layer optimization tool and the computational time would be exponentially increased.  Therefore, we 
+
 
 ```R
 # Install Rcpp packages
@@ -11,8 +13,6 @@ install.packages(c("Rcpp", "RcppArmadillo"))
 # Load Rcpp packages
 library(Rcpp)
 library(RcppArmadillo)
-
-path <- "D:/stdmmOptDesignInhibition"
 
 # Load Main Functions
 sourceCpp("/kernel/psokernel.cpp")

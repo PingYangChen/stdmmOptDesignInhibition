@@ -4,7 +4,7 @@ This repository consists of the source codes of the online app, [Application of 
 
 We provide the source codes here for users who have basic knowledge in R programming.  There are two required R packages for running our code, *Rcpp* and *RcppArmadillo*, because the main function of NestedPSO is written in C++.  Nonetheless, users are NOT required to be familiar with C/C++ programming.  
 
-In our online app, we search minimally supported standardized maximin *D*-optimal design only to avoid the huge computational time (hours to days, depending on the settings of swarm sizes and iterations of PSO loops) of one implementation that exhausts the computational resource on the server.  Therefore, we suggest users to run the code in their own device if desired to change the number of support points.
+In our online app, we search minimally supported standardized maximin *D*-optimal design only to avoid the huge computational time (hours to days, depending on the settings of swarm sizes and iterations of PSO loops) of one implementation that could exhaust the computational resource on the server.  Therefore, we suggest users to run the code in their own device if desired to change the number of support points.
 
 The following R codes (*run.R*) are an example for how to use the source codes.  For more details of background knowledge, please refer to the main page of our online app or our published paper.
 

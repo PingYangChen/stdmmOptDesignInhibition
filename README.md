@@ -4,41 +4,48 @@ This repository consists of the source codes of the online app, [Application of 
 
 We provide the source codes here for users who have basic knowledge in R programming.  There are two required R packages for running our code, *Rcpp* and *RcppArmadillo*, because the main function of NestedPSO is written in C++.  Nonetheless, users are not required to be familiar with C/C++ programming.  
 
-By using the source codes, one can generate a design with more than minimally supported number of support points freely.  Once the standardized maximin design is not minimally supported, due to the lack of analytical solution of locally *D*-optimal design, the NestedPSO becomes a 3-layer optimization tool and the computational time would be exponentially increased.  Therefore, we 
+In our online app, we did not provide configurable number of support points for standardized maximin *D*-optimal design.  This is because, once the target design is not minimally supported, due to the lack of analytical solution of locally *D*-optimal design, the NestedPSO becomes a 3-layer optimization algorithm and the computational time would be exponentially increased (hours to days, depending on the settings of swarm sizes and iterations of PSO loops). 
+Therefore, we suggest users to run the code in their own device if desired to change the number of support points.
 
+The following R codes (*run.R*) are an example for how to use the source codes.  For more details of background knowledge, please refer to the main page of our online app or our published paper.
+
+* Chen P.-Y., Chen, R.-B., Tung, H.-C., and Wong, W. K. (2017+). Standardized Maximim *D*-optimal Designs for Enzyme Kinetic Inhibition Models. (*Submitted*)
 
 ```R
-# Install Rcpp packages
+### FILENAME: run.R
+## Install Rcpp packages
 install.packages(c("Rcpp", "RcppArmadillo"))
-# Load Rcpp packages
+## Load Rcpp packages
 library(Rcpp)
 library(RcppArmadillo)
 
-# Load Main Functions
+## Load Main Functions
 sourceCpp("/kernel/psokernel.cpp")
 source("rOptDesignInhibitionPSO.R")
 
-# Get Target Design Information
+## Get Target Design Information
 D_INFO <- getD_INFO(model = 4, 
                     paraUpper = c(1, 5, 3, 5), 
                     paraLower = c(1, 4, 2, 4))
-# Check the contents in D_INFO
+## Check the contents in D_INFO
 names(D_INFO)
 # If desired to change configuration, assign new values with '$' and variable lable
 # For example, to change the upper bound of design space,
 # D_INFO$dsUpper <- c(15, 90) # upper bound of c(s, i)
+# To increase the number of support points,
+# D_INFO$nSupp <- 5 
 
-# Get PSO Configurations
+## Get PSO Configurations
 PSO_INFO <- getPSO_INFO()
-# Check the contents in PSO_INFO
+## Check the contents in PSO_INFO
 str(PSO_INFO)
 # If desired to change configuration, assign new values with '$' and variable lable
 # For example, to increase the swarm size for OUTER loop,
 # PSO_INFO$OUTER$nSwarm <- 200
 
-# Run NestedPSO (PSO) Code
+## Run NestedPSO (PSO) Code
 RESULT <- rOptDesignInhibitionPSO(D_INFO, PSO_INFO)
-# Draw plot of directional derivative function
+## Draw plot of directional derivative function
 drawEquiv(RESULT, D_INFO)
 ```
 

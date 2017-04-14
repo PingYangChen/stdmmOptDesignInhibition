@@ -6,7 +6,7 @@ We provide the source codes here for users who have basic knowledge in R program
 
 In our online app, we search minimally supported standardized maximin *D*-optimal design only to avoid the huge computational time (hours to days, depending on the settings of swarm sizes and iterations of PSO loops) of one implementation that could exhaust the computational resource on the server.  Therefore, we suggest users to run the code in their own device if desired to change the number of support points.
 
-The following R codes (*run.R*) are an example for how to use the source codes.  For more details of background knowledge, please refer to the main page of our online app or our published paper.
+The following R code (*run.R*) is an example for how to use the source codes.  For more details of background knowledge, please refer to the main page of our online app or our published paper.
 
 * Chen P.-Y., Chen, R.-B., Tung, H.-C., and Wong, W. K. (2017+). Standardized Maximim *D*-optimal Designs for Enzyme Kinetic Inhibition Models. (*Submitted*)
 

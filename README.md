@@ -8,7 +8,7 @@ In our online app, we search only for minimally supported standardized maximin *
 
 The following R code (*run.R*) is an example for how to use the source codes.  For more details of the background knowledge, please refer to the main page of our online app or our published paper.
 
-* Chen P.-Y., Chen, R.-B., Tung, H.-C., and Wong, W. K. (2017+). Standardized Maximim *D*-optimal Designs for Enzyme Kinetic Inhibition Models. (*Submitted*)
+* Chen, P. Y., Chen, R. B., Tung, H. C. and Wong, W. K. (2017). Standardized maximim D-optimal designs for enzyme kinetic inhibition models. Chemometrics and Intelligent Laboratory Systems, 169, 79-86.
 
 ```R
 ### FILENAME: run.R
